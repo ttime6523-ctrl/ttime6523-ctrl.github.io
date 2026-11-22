@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>พอร์ตโฟลิโอ | นายณัฐวัชต์ รื่นเรืองฤทธิ์</title>
+<meta name="description" content="พอร์ตโฟลิโอแสดงผลงานและโปรเจกต์ของผม">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #f6f7fb;
+    --surface: #ffffff;
+    --text: #1b1f2a;
+    --muted: #5d6578;
+    --line: #e4e7ef;
+    --accent: #4f46e5;
+    --accent-soft: #eceafd;
+    --accent-2: #0ea5a4;
+    --shadow: 0 1px 2px rgba(20,24,40,.05), 0 8px 24px rgba(20,24,40,.06);
+    --radius: 18px;
+  }
+  [data-theme="dark"] {
+    --bg: #0f1220;
+    --surface: #171b2e;
+    --text: #eceef7;
+    --muted: #9aa3bd;
+    --line: #262b45;
+    --accent: #8b87ff;
+    --accent-soft: #23264a;
+    --accent-2: #3dd6d0;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.25);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "Inter", "Noto Sans Thai", system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  .wrap { width: min(1040px, 92%); margin-inline: auto; }
+
+  /* ---------- Nav ---------- */
+  .nav {
+    position: sticky; top: 0; z-index: 10;
+    backdrop-filter: blur(12px);
+    background: color-mix(in srgb, var(--bg) 80%, transparent);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 62px; }
+  .brand { font-weight: 700; letter-spacing: -.01em; }
+  .brand span { color: var(--accent); }
+  .nav ul { display: flex; gap: 6px; list-style: none; align-items: center; }
+  .nav li a { padding: 8px 14px; border-radius: 999px; color: var(--muted); font-size: .95rem; transition: .2s; }
+  .nav li a:hover { color: var(--text); background: var(--accent-soft); }
+  .theme-btn {
+    border: 1px solid var(--line); background: var(--surface); color: var(--text);
+    width: 38px; height: 38px; border-radius: 50%; cursor: pointer; font-size: 1rem;
+  }
+  @media (max-width: 640px) { .nav li:not(:last-child) { display: none; } }
+
+  /* ---------- Hero ---------- */
+  .hero { padding: 72px 0 56px; }
+  .hero-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 48px; align-items: center; }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: .88rem; color: var(--accent); background: var(--accent-soft);
+    padding: 6px 14px; border-radius: 999px; font-weight: 600;
+  }
+  .eyebrow::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--accent-2); }
+  .hero h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); line-height: 1.15; margin: 18px 0 14px; letter-spacing: -.02em; }
+  .hero h1 em { font-style: normal; background: linear-gradient(90deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .hero p.lead { color: var(--muted); font-size: 1.12rem; max-width: 52ch; }
+  .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; border-radius: 12px;
+    font-weight: 600; font-size: .98rem; transition: transform .15s, box-shadow .15s;
+    border: 1px solid transparent;
+  }
+  .btn:hover { transform: translateY(-2px); }
+  .btn.primary { background: var(--accent); color: #fff; box-shadow: 0 8px 20px color-mix(in srgb, var(--accent) 35%, transparent); }
+  .btn.ghost { background: var(--surface); border-color: var(--line); }
+
+  .profile-card {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 24px;
+    padding: 28px; box-shadow: var(--shadow); text-align: center;
+  }
+  .avatar {
+    width: 132px; height: 132px; margin: 0 auto 16px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    display: grid; place-items: center; color: #fff; font-size: 3rem; font-weight: 700;
+    overflow: hidden; border: 4px solid var(--surface); box-shadow: 0 0 0 2px var(--line);
+  }
+  .avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center 18%; }
+  .profile-card h3 { font-size: 1.25rem; }
+  .profile-card .role { color: var(--muted); font-size: .95rem; margin-bottom: 16px; }
+  .contact { list-style: none; text-align: left; display: grid; gap: 8px; font-size: .94rem; color: var(--muted); border-top: 1px solid var(--line); padding-top: 16px; }
+  .contact li { display: flex; gap: 10px; align-items: center; word-break: break-all; }
+  .contact a:hover { color: var(--accent); }
+  @media (max-width: 820px) { .hero-grid { grid-template-columns: 1fr; } .hero { padding-top: 40px; } }
+
+  /* ---------- Sections ---------- */
+  section { padding: 56px 0; }
+  .sec-head { margin-bottom: 28px; }
+  .sec-head .kicker { color: var(--accent); font-weight: 600; font-size: .9rem; letter-spacing: .04em; text-transform: uppercase; }
+  .sec-head h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); letter-spacing: -.01em; }
+
+  .about p { color: var(--muted); max-width: 70ch; font-size: 1.05rem; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; margin-top: 28px; }
+  .card {
+    background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 24px; box-shadow: var(--shadow); transition: transform .2s, border-color .2s;
+  }
+  .card:hover { transform: translateY(-4px); border-color: var(--accent); }
+  .card .ico { font-size: 1.8rem; width: 52px; height: 52px; display: grid; place-items: center; background: var(--accent-soft); border-radius: 14px; margin-bottom: 14px; }
+  .card h3 { font-size: 1.08rem; margin-bottom: 6px; }
+  .card p { color: var(--muted); font-size: .96rem; }
+
+  .stack { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+  .chip { font-size: .9rem; padding: 7px 16px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); font-weight: 500; }
+
+  /* ---------- Projects ---------- */
+  .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+  .project { display: flex; flex-direction: column; }
+  .project .badge { align-self: flex-start; font-size: .78rem; font-weight: 600; padding: 4px 12px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); margin-bottom: 12px; }
+  .project h3 { font-size: 1.18rem; margin-bottom: 8px; }
+  .project p { color: var(--muted); font-size: .96rem; flex: 1; }
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; }
+  .tags span { font-size: .8rem; padding: 3px 11px; border-radius: 8px; background: var(--bg); border: 1px solid var(--line); color: var(--muted); }
+  .project .more { font-weight: 600; color: var(--accent); font-size: .95rem; }
+  .project .more:hover { text-decoration: underline; }
+
+  /* ---------- Activity ---------- */
+  #activity { display: none; }
+  .activity-box { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow); overflow-x: auto; }
+  .activity-box img { display: block; min-width: 680px; width: 100%; }
+  [data-theme="dark"] .activity-box img { filter: invert(.92) hue-rotate(180deg); }
+
+  main { padding-bottom: 32px; }
+  .hidden { display: none !important; }
+</style>
+</head>
+
+<body>
+
+<!-- ============ เมนูด้านบน ============ -->
+<nav class="nav">
+  <div class="wrap">
+    <a href="#top" class="brand" id="brand">my<span>.portfolio</span></a>
+    <ul>
+      <li><a href="#about">เกี่ยวกับผม</a></li>
+      <li><a href="#projects">ผลงาน</a></li>
+      <li><a href="#activity" id="nav-activity" class="hidden">กิจกรรม</a></li>
+      <li><a href="#contact">ติดต่อ</a></li>
+      <li><button class="theme-btn" id="themeBtn" aria-label="สลับโหมดสว่าง/มืด">🌙</button></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ============ ส่วนบนสุด (Hero) ============ -->
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow" id="hero-role">Web Developer</span>
+      <h1>สร้างสรรค์<em>ประสบการณ์ดิจิทัล</em><br>ที่ใช้งานได้จริง</h1>
+      <p class="lead" id="hero-tagline">
+        สวัสดีครับ ผมสนใจการพัฒนาเว็บแอปพลิเคชันและระบบสารสนเทศ
+        ตั้งแต่ออกแบบระบบ ฐานข้อมูล ไปจนถึงหน้าเว็บที่ใช้งานง่าย
+      </p>
+      <div class="cta">
+        <a class="btn primary" href="#projects">ดูผลงานของผม →</a>
+        <a class="btn ghost" href="#contact">ติดต่อผม</a>
+      </div>
+      <div class="stack" aria-label="Tech stack">
+        <span class="chip">HTML</span>
+        <span class="chip">CSS</span>
+        <span class="chip">JavaScript</span>
+        <span class="chip">PHP</span>
+        <span class="chip">MySQL</span>
+        <span class="chip">Bootstrap 5</span>
+      </div>
+    </div>
+
+    <aside class="profile-card" id="contact">
+      <!-- ถ้ามีรูปโปรไฟล์: วางไฟล์ชื่อ profile.jpg ไว้โฟลเดอร์เดียวกับ index.html เว็บจะใช้รูปนี้ให้อัตโนมัติ -->
+      <div class="avatar" id="avatar">ก</div>
+      <h3 id="name">ชื่อ นามสกุล</h3>
+      <p class="role">นักพัฒนาเว็บ / นักศึกษา</p>
+      <ul class="contact">
+        <li>✉️ <a id="c-email" href="mailto:you@example.com">you@example.com</a></li>
+        <li>📞 <span id="c-phone">0X-XXX-XXXX</span></li>
+        <li>📍 <span id="c-loc">ประเทศไทย</span></li>
+        <li>🐙 <a id="c-github" href="https://github.com/" target="_blank" rel="noopener">github.com</a></li>
+      </ul>
+    </aside>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ เกี่ยวกับผม ============ -->
+<section id="about" class="about">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">About</div>
+      <h2>สวัสดี! ยินดีที่ได้รู้จัก 👋</h2>
+    </div>
+    <p>
+      ผมชอบเปลี่ยนปัญหาในชีวิตจริงให้เป็นระบบที่ใช้งานได้ ผ่านการวิเคราะห์และออกแบบระบบ
+      พัฒนาเว็บแอปพลิเคชัน และเรียนรู้เทคโนโลยีใหม่ๆ อย่างต่อเนื่อง
+      <!-- ✏️ แก้ข้อความแนะนำตัวตรงนี้ให้เป็นของคุณเอง -->
+    </p>
+
+    <div class="cards">
+      <div class="card">
+        <div class="ico">💻</div>
+        <h3>Web Developer</h3>
+        <p>พัฒนาเว็บแอปพลิเคชันด้วย PHP และ MySQL ทั้งหน้าบ้านสำหรับผู้ใช้และระบบหลังบ้านสำหรับผู้ดูแล</p>
+      </div>
+      <div class="card">
+        <div class="ico">🗂️</div>
+        <h3>System Analyst</h3>
+        <p>วิเคราะห์และออกแบบระบบด้วย DFD และ ER Diagram เพื่อให้ระบบตรงกับความต้องการของผู้ใช้</p>
+      </div>
+      <div class="card">
+        <div class="ico">🤖</div>
+        <h3>Fast Learner</h3>
+        <p>สนใจ AI และ Machine Learning กำลังเรียนรู้ผ่านการทำแล็บและโปรเจกต์จริง</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ผลงาน ============ -->
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Projects</div>
+      <h2>ผลงานและโปรเจกต์</h2>
+    </div>
+
+    <!-- การ์ดโปรเจกต์สร้างจากรายการ PROJECTS ในสคริปต์ด้านล่าง (แก้ที่นั่นที่เดียว) -->
+    <div class="projects" id="projectList"></div>
+  </div>
+</section>
+
+<!-- ============ กิจกรรม GitHub (แสดงเมื่อใส่ username ด้านล่าง) ============ -->
+<section id="activity">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Activity</div>
+      <h2>บันทึกผลงานบน GitHub</h2>
+    </div>
+    <div class="activity-box">
+      <img id="ghchart" alt="กราฟการ contribute บน GitHub" loading="lazy">
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script>
+/* =====================================================
+   ✏️ แก้ข้อมูลของคุณตรงนี้ที่เดียว (ไม่ต้องแก้ HTML ด้านบน)
+   ===================================================== */
+const CONFIG = {
+  name: "นายณัฐวัชต์ รื่นเรืองฤทธิ์",   // ชื่อที่จะแสดง
+  role: "Web Developer",          // ตำแหน่ง/สายงาน
+  email: "ttime0703@gmail.com",
+  phone: "061-989-4117",
+  location: "ประเทศไทย",
+  githubUsername: "timetime48"    // username GitHub (ใส่เพื่อแสดงกราฟกิจกรรม ลบให้ว่าง "" ถ้าไม่ต้องการ)
+};
+
+/* =====================================================
+   ✏️ รายการโปรเจกต์ (เพิ่ม/ลบ/แก้ได้ที่นี่)
+   - title: ชื่อโปรเจกต์   - type: ป้ายประเภทด้านบนการ์ด
+   - desc: คำอธิบายสั้นๆ   - tags: เทคโนโลยีที่ใช้
+   - link: ลิงก์โปรเจกต์ (เว้นว่าง "" = ไม่แสดงปุ่ม "ดูโปรเจกต์")
+   ===================================================== */
+const PROJECTS = [
+  {
+    title: "ระบบจองคิวออนไลน์สำหรับร้านบริการ",
+    type: "Web App",
+    desc: "เว็บแอปให้ลูกค้าเลือกบริการ วันและเวลาที่ว่างเพื่อจองคิวเอง พร้อมหน้าผู้ดูแลสำหรับยืนยันหรือยกเลิกคิว",
+    tags: ["PHP", "MySQL", "Bootstrap 5"],
+    link: ""
+  },
+  {
+    title: "ระบบจัดการสต็อกสินค้า",
+    type: "ระบบจัดการ",
+    desc: "ระบบบันทึกรับเข้า-เบิกออกสินค้า แจ้งเตือนเมื่อสินค้าใกล้หมด และสรุปรายงานสต็อกคงเหลือ",
+    tags: ["PHP", "MySQL", "Chart.js"],
+    link: ""
+  },
+  {
+    title: "Weather Dashboard",
+    type: "Dashboard",
+    desc: "แดชบอร์ดแสดงสภาพอากาศปัจจุบันและพยากรณ์ล่วงหน้า ค้นหาตามชื่อจังหวัดหรือเมืองได้",
+    tags: ["HTML", "CSS", "JavaScript", "REST API"],
+    link: ""
+  },
+  {
+    title: "Task Manager — จัดการงานประจำวัน",
+    type: "Web App",
+    desc: "เว็บแอปจดและจัดหมวดหมู่งานที่ต้องทำ ติ๊กเมื่อเสร็จ กรองตามสถานะ และบันทึกข้อมูลไว้ในเบราว์เซอร์",
+    tags: ["JavaScript", "LocalStorage", "Responsive"],
+    link: ""
+  },
+  {
+    title: "ทำนายผลการเรียนด้วย Machine Learning",
+    type: "AI / ML",
+    desc: "สร้างโมเดลทำนายผลการเรียนจากพฤติกรรมการเรียน เปรียบเทียบความแม่นยำของ Decision Tree, Naive Bayes และ K-NN",
+    tags: ["Python", "scikit-learn", "Pandas"],
+    link: ""
+  },
+  {
+    title: "Landing Page ร้านกาแฟ",
+    type: "UI Design",
+    desc: "หน้าเว็บแนะนำร้านกาแฟ แสดงเมนู โปรโมชัน และแผนที่ร้าน ออกแบบให้ดูดีทั้งบนมือถือและคอมพิวเตอร์",
+    tags: ["HTML", "CSS", "Responsive"],
+    link: ""
+  }
+];
+
+/* ---------- สร้างการ์ดโปรเจกต์ ---------- */
+(function () {
+  const box = document.getElementById("projectList");
+  PROJECTS.forEach(p => {
+    const card = document.createElement("article");
+    card.className = "card project";
+
+    const badge = document.createElement("span");
+    badge.className = "badge"; badge.textContent = p.type;
+
+    const h = document.createElement("h3"); h.textContent = p.title;
+    const d = document.createElement("p");  d.textContent = p.desc;
+
+    const tags = document.createElement("div"); tags.className = "tags";
+    p.tags.forEach(t => { const s = document.createElement("span"); s.textContent = t; tags.appendChild(s); });
+
+    card.append(badge, h, d, tags);
+
+    if (p.link) {
+      const a = document.createElement("a");
+      a.className = "more"; a.href = p.link; a.target = "_blank"; a.rel = "noopener";
+      a.textContent = "ดูโปรเจกต์ →";
+      card.appendChild(a);
+    }
+    box.appendChild(card);
+  });
+})();
+
+/* ---------- ใส่ข้อมูลลงหน้าเว็บ ---------- */
+(function () {
+  const $ = id => document.getElementById(id);
+  document.title = "พอร์ตโฟลิโอ | " + CONFIG.name;
+  $("name").textContent = CONFIG.name;
+  $("hero-role").textContent = CONFIG.role;
+  /* ตัวอักษรในวงกลมโปรไฟล์: ข้ามคำนำหน้าชื่อ (นาย/นาง/นางสาว/น.ส.) */
+  const bare = CONFIG.name.trim().replace(/^(นางสาว|น\.ส\.|นาย|นาง)\s*/, "");
+  $("avatar").textContent = (bare[0] || "?");
+  $("c-email").textContent = CONFIG.email;
+  $("c-email").href = "mailto:" + CONFIG.email;
+  $("c-phone").textContent = CONFIG.phone;
+  $("c-loc").textContent = CONFIG.location;
+
+  if (CONFIG.githubUsername) {
+    $("c-github").href = "https://github.com/" + CONFIG.githubUsername;
+    $("c-github").textContent = "github.com/" + CONFIG.githubUsername;
+    $("brand").innerHTML = CONFIG.githubUsername + "<span>.github.io</span>";
+    /* แสดงกราฟกิจกรรมเฉพาะเมื่อโหลดรูปสำเร็จ ถ้าโหลดไม่ได้จะซ่อนทั้งส่วน */
+    const chart = $("ghchart");
+    chart.onload = () => {
+      $("activity").style.display = "block";
+      $("nav-activity").classList.remove("hidden");
+    };
+    chart.onerror = () => { $("activity").style.display = "none"; };
+    chart.src = "https://ghchart.rshah.org/4f46e5/" + encodeURIComponent(CONFIG.githubUsername);
+  }
+
+  /* รูปโปรไฟล์: ถ้ามีไฟล์ profile.jpg จะใช้รูปนี้แทนตัวอักษร */
+  const img = new Image();
+  img.onload = () => { $("avatar").textContent = ""; $("avatar").appendChild(img); };
+  img.alt = CONFIG.name;
+  img.src = "profile.jpg";
+})();
+
+/* ---------- สลับโหมดสว่าง/มืด ---------- */
+(function () {
+  const root = document.documentElement;
+  const btn = document.getElementById("themeBtn");
+  let saved = null;
+  try { saved = localStorage.getItem("theme"); } catch (e) {}
+  const prefersDark = window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches;
+  const start = saved || (prefersDark ? "dark" : "light");
+  apply(start);
+  btn.addEventListener("click", () => {
+    const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    apply(next);
+    try { localStorage.setItem("theme", next); } catch (e) {}
+  });
+  function apply(t) {
+    root.setAttribute("data-theme", t);
+    btn.textContent = t === "dark" ? "☀️" : "🌙";
+  }
+})();
+</script>
+</body>
+</html>
